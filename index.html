@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+
+    <title>
+      Bolati Pustake Studio – Automated Video Creation & YouTube Uploads
+    </title>
+    <meta
+      name="description"
+      content="Bolati Pustake Studio is a warm, mobile-first creator tool that automates your entire video workflow – from merging audio to generating thumbnails and uploading directly to YouTube."
+    />
+    <meta
+      name="author"
+      content="Bolati Pustake"
+    />
+
+    <!-- Open Graph Meta -->
+    <meta
+      property="og:title"
+      content="Bolati Pustake Studio – Automated Video Creation & YouTube Uploads"
+    />
+    <meta
+      property="og:description"
+      content="Create, merge, and publish videos effortlessly with Bolati Pustake Studio. End-to-end automation for storytellers and content creators."
+    />
+    <meta
+      property="og:type"
+      content="website"
+    />
+    <meta
+      property="og:image"
+      content="/logo.png"
+    />
+
+    <!-- Twitter Meta -->
+    <meta
+      name="twitter:card"
+      content="summary_large_image"
+    />
+    <meta
+      name="twitter:site"
+      content="@bolatipustake"
+    />
+    <meta
+      name="twitter:title"
+      content="Bolati Pustake Studio – Automated Video Creation & YouTube Uploads"
+    />
+    <meta
+      name="twitter:description"
+      content="Bolati Pustake Studio automates video editing, thumbnail generation, and YouTube publishing – built for creators who value simplicity and storytelling."
+    />
+    <meta
+      name="twitter:image"
+      content="/logo.png"
+    />
+
+    <!-- PWA Manifest -->
+    <link
+      rel="manifest"
+      href="/manifest.webmanifest"
+    />
+    <meta
+      name="theme-color"
+      content="#111827"
+    />
+
+    <!-- iOS and general app icons (all same logo) -->
+    <link
+      rel="apple-touch-icon"
+      href="/logo.png"
+    />
+    <meta
+      name="apple-mobile-web-app-capable"
+      content="yes"
+    />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta
+      name="apple-mobile-web-app-title"
+      content="BP Editor"
+    />
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="/logo.png"
+    />
+  </head>
+
+  <body class="bg-amber-50 text-stone-800">
+    <div id="root"></div>
+    <script
+      type="module"
+      src="/src/main.tsx"
+    ></script>
+
+    <!-- Minimal service worker registration -->
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker.register("/sw.js").catch(console.error);
+        });
+      }
+    </script>
+  </body>
+</html>

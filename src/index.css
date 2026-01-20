@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Warm, readable, non-vibrant palette (all HSL) */
+/* Tuned for high legibility and gentle contrast */
+
+@layer base {
+  :root {
+    /* Core surfaces & text */
+    --background: 30 20% 99%;
+    --foreground: 24 15% 18%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 24 15% 18%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 24 15% 18%;
+
+    /* Primary (subtle warm amber) */
+    /* Chosen to be comfortable, not flashy; good on light & dark */
+    --primary: 32 72% 46%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary (soft warm surface) */
+    --secondary: 35 100% 97%;
+    --secondary-foreground: 24 20% 20%;
+
+    /* Muted / subdued text and blocks */
+    --muted: 30 14% 94%;
+    --muted-foreground: 25 12% 45%;
+
+    /* Accent mirrors primary for simplicity */
+    --accent: 32 72% 46%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Status colors */
+    --destructive: 0 70% 48%;
+    --destructive-foreground: 0 0% 100%;
+    --success: 142 63% 42%;
+    --success-foreground: 0 0% 100%;
+
+    /* Lines / inputs / focus */
+    --border: 28 16% 88%;
+    --input: 28 16% 88%;
+    --ring: 32 72% 46%;
+
+    /* Radii */
+    --radius: 0.75rem; /* slightly larger for easier targets */
+
+    /* App semantics */
+    --pane-bg: 0 0% 100%;
+    --pane-border: 28 16% 88%;
+    --hover-bg: 35 100% 96%;
+    --selected-bg: 35 100% 94%;
+    --kbd-bg: 28 16% 88%;
+    --kbd-fg: 24 15% 18%;
+
+    /* Subtle shadows with warm hue weighting */
+    --shadow-sm: 0 1px 2px 0 hsl(24 10% 20% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(24 10% 20% / 0.08);
+    --shadow-lg: 0 10px 15px -3px hsl(24 10% 20% / 0.12);
+  }
+
+  .dark {
+    /* Warm charcoal dark mode */
+    --background: 24 10% 10%;
+    --foreground: 30 28% 96%;
+
+    --card: 24 10% 10%;
+    --card-foreground: 30 28% 96%;
+
+    --popover: 24 10% 10%;
+    --popover-foreground: 30 28% 96%;
+
+    /* Keep primary slightly brighter in dark for contrast */
+    --primary: 32 78% 56%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 24 10% 16%;
+    --secondary-foreground: 30 28% 96%;
+
+    --muted: 24 10% 16%;
+    --muted-foreground: 28 12% 70%;
+
+    --accent: 32 78% 56%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 65% 44%;
+    --destructive-foreground: 30 28% 96%;
+
+    --success: 142 60% 40%;
+    --success-foreground: 30 28% 96%;
+
+    --border: 24 10% 20%;
+    --input: 24 10% 20%;
+    --ring: 32 78% 56%;
+
+    --pane-bg: 24 10% 10%;
+    --pane-border: 24 10% 20%;
+    --hover-bg: 24 10% 18%;
+    --selected-bg: 24 10% 20%;
+    --kbd-bg: 24 10% 20%;
+    --kbd-fg: 30 28% 96%;
+
+    --shadow-sm: 0 1px 2px 0 hsl(0 0% 0% / 0.35);
+    --shadow-md: 0 4px 6px -1px hsl(0 0% 0% / 0.45);
+    --shadow-lg: 0 10px 15px -3px hsl(0 0% 0% / 0.55);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  /* Comfortable defaults for focus (visible, warm, not loud) */
+  :focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px hsl(var(--ring) / 0.15),
+      0 0 0 4px hsl(var(--ring) / 0.25);
+    border-color: hsl(var(--ring));
+  }
+}
